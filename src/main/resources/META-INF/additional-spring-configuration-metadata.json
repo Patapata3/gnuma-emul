@@ -1,0 +1,13 @@
+{
+  "properties": [
+    {
+      "name": "classifier.name",
+      "type": "java.lang.String",
+      "description": "Name of the classifier."
+    },
+    {
+      "name": "classifier.address",
+      "type": "java.lang.String",
+      "description": "Address of the classifier."
+    }
+  ] }

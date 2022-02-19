@@ -1,5 +1,5 @@
 {
-	"address": "http://127.0.0.1:8081",
+	"address": "https://emul-roberta.herokuapp.com",
 	"classifier_name": "emul_roberta",
 	"hyper_parameters": 
 	[

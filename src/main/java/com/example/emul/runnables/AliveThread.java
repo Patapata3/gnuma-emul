@@ -1,9 +1,13 @@
 package com.example.emul.runnables;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Value;
 
 public class AliveThread implements Runnable {
+    private Logger log = LoggerFactory.getLogger(AliveThread.class);
+
     // to stop the thread
     private volatile boolean exit;
     private RabbitTemplate rabbitTemplate;
@@ -31,6 +35,7 @@ public class AliveThread implements Runnable {
             } catch (InterruptedException interruptedException) {
                 interruptedException.printStackTrace();
             }
+            log.info("alive Message Sent " + address);
             rabbitTemplate.convertAndSend("GNUMAExchange", "Classifier.distilbert", String.format("{\"address\": \"%s\"}", address), message -> {
                 message.getMessageProperties().setHeader("event", "ClassifierAlive");
                 return message;

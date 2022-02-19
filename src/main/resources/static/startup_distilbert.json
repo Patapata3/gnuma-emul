@@ -1,5 +1,5 @@
 {
-	"address": "http://127.0.0.1:8081",
+	"address": "https://emul-distilbert.herokuapp.com",
 	"classifier_name": "emul_distilbert",
 	"hyper_parameters": 
 	[
